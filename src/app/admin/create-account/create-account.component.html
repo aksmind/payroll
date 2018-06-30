@@ -1,0 +1,97 @@
+<!-- <p>
+  create-account works!
+</p>
+-->
+<!-- Page Content -->
+<div id="pr-page-content-wrapper">
+  <div class="container-fluid">
+
+    <div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+      <h4>Create account</h4>
+    </div> <!-- pr-pg-title-wrapper  -->
+
+    <div class="row">
+
+      <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 pr-table-main-wrap">
+        
+        <div class="pr_table-style1" data-aos="fade-right" data-aos-duration="1500">
+
+          <form class="login100-form validate-form p-l-55 p-r-55 p-t-40">
+
+            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter first name">
+              <input class="input100" type="text" name="first" #first value = "arun">
+              <span class="focus-input100"></span>
+            </div>
+            
+            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter last name">
+              <input class="input100" type="text" name="last" #last value = "sharma">
+              <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email">
+              <input class="input100" type="email" name="email" #email value = "arun@gmail.com">
+              <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input m-b-16">
+                <select class="form-control select-input100" id="designation" #designation >
+                  <option value=" " selected disabled>Designation</option>
+                  <option value="Labour">Labour</option>
+                  <option value="CEO">CEO</option>
+                  <option value="Team Leader">Team Leader</option>
+              </select>
+              <span class="focus-input100"></span>
+              
+              </div>
+
+              <div class="row">
+                  
+                  <div class="col-sm-6">
+                   <div class="wrap-input100 validate-input m-b-16" data-validate="cl">
+                    <input class="input100" type="text" name="cl" #CL value = "21">
+                    <span class="focus-input100"></span>
+                  </div>
+                  </div>
+                  <div class="col-sm-6">
+                   <div class="wrap-input100 validate-input m-b-16" data-validate="pl">
+                    <input class="input100" type="text" name="pl" #PL value = "20">
+                    <span class="focus-input100"></span>
+                  </div>
+                  </div>
+              </div>
+
+             <div class="wrap-input100 validate-input m-b-16" data-validate="base_salary">
+                <input class="input100" type="text" name="base_salary" #baseSalary value = "2145">
+                <span class="focus-input100"></span>
+            </div>
+
+              <div class="row">
+                  
+                  <div class="col-sm-12">
+                   <div class="wrap-input100 validate-input m-b-16" data-validate="address">
+                    <textarea class="form-control textarea-input100" id="payrollAddress" rows="3" rows="4" name="address" #address placeholder="Enter your address"></textarea>
+                    <span class="focus-input100"></span>
+                    </div>
+                  </div>
+              </div>
+
+              
+            <div class="container-login100-form-btn p-b-50 p-t-30">
+              <a class="btn btn-default pr-save-btn" (click)="createUser(first.value,last.value,email.value,designation.value,CL.value,PL.value,baseSalary.value,address.value)">Create
+                <i class="icon icon-arrows"></i>
+              </a>
+            </div>
+
+          </form>
+
+        </div> <!--  pr_table-style  -->
+
+      </div> <!--  pr-table-main-wrap  -->
+
+    </div> <!--  row  -->
+
+  </div>  <!--   container-fluid -->
+          
+             
+  
+</div> <!-- page-content-wrapper -->

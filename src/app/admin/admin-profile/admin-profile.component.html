@@ -1,0 +1,70 @@
+<!-- <p>
+  admin-profile workssdg!
+</p>
+<a routerLink='/create-account'>Create Account</a>
+<a routerLink='/approve-leaves'>Approve Leaves</a>
+<a routerLink='/pay-employee'>Pay Employee</a>
+<a routerLink='/edit-payment'>Edit Payment</a>
+-->
+
+<!-- Page Content -->
+<div id="pr-page-content-wrapper">
+  <div class="container-fluid">
+
+    <div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+      <h4>Admin Profile</h4>
+    </div> <!-- pr-pg-title-wrapper  -->
+
+    <div class="row">
+
+      <div class="col-xl-6 offset-xl-3 col-lg-10 offset-lg-1 col-md-10 offset-md-1 pr-table-main-wrap">
+        
+        <div class="pr_table-style1" data-aos="fade-right" data-aos-duration="1500">
+
+          <div class="pr-admin-wrapper col-xl-10 offset-xl-1 col-md-12">
+          <!-- the below div will have the map  -->
+            <div class="pr-admin-img">
+              <img src="assets/img/image.png">
+            </div>
+            
+            <div class="pr-admin-desc">
+              <p class="p1">{{ name }}</p>
+              <p class="p2">{{ desg }}</p>
+            </div>
+          </div>  <!--  pr-admin-wrapper  -->
+
+          <div class="container-login100-form-btn p-b-40 p-t-50">
+            <div class="col-3 text-center">
+              <a class="btn btn-default pr-profile-btn" routerLink='/create-account'>Create Account
+                <i class="icon icon-arrows"></i>
+              </a>
+            </div>
+            <div class="col-3 text-center">
+              <a class="btn btn-default pr-profile-btn" routerLink='/approve-leaves'>Approve Leaves
+                <i class="icon icon-arrows"></i>
+              </a>
+            </div>
+            <div class="col-3 text-center">
+              <a class="btn btn-default pr-profile-btn" routerLink='/pay-employee'>Pay Employee
+                <i class="icon icon-arrows"></i>
+              </a>
+            </div>
+            <div class="col-3 text-center">
+              <a class="btn btn-default pr-profile-btn" routerLink='/edit-payment'>Edit Payment
+                <i class="icon icon-arrows"></i>
+              </a>
+            </div>
+          </div>
+
+        </div> <!--  pr_table-style  -->
+
+      </div> <!--  pr-table-main-wrap  -->
+
+    </div> <!--  row  -->
+
+  </div>  <!--   container-fluid -->
+          
+             
+  
+</div> <!-- page-content-wrapper -->
+<router-outlet></router-outlet>

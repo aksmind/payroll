@@ -1,0 +1,86 @@
+		<!-- Page Content -->
+    <div id="pr-page-content-wrapper">
+      <div class="container-fluid">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+              Open modal
+            </button>
+          <div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+              <h4>Pay Employee</h4>
+          </div> <!-- pr-pg-title-wrapper  -->
+
+          <div class="row">
+
+              <div class="col-12 pr-table-main-wrap" *ngIf="AllEmployeePay">
+      
+                  <div class="pr_table-style" data-aos="fade-right" data-aos-duration="1500">
+
+                      <div class="pr-table-wrapper" >
+                          <table class="table table-bordered table-striped table-hover test-table" id="user-table1">
+                              <thead class="thead-dark">
+                                  <tr>
+                                      <th class="text-center" scope="col">Name</th>
+                                      <th class="text-center" scope="col">Month</th>
+                                      <th class="text-center" scope="col">Status</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor=" let employee of AllEmployeePay.payslips">
+                                      <td class="text-center">{{ employee._userId.name.first }}</td>
+                                      <td class="text-center">{{ employee.month }}</td>
+                                      <td class="text-center" *ngIf="employee.isPaid">
+                                          <span>Done</span>
+                                      </td>
+                                      <td class="text-center" *ngIf="!employee.isPaid">
+                                          <button class=" btn btn-xs btn-success" (click)="changepay(employee.id,employee.month)">Pay</button>
+                                      </td>
+                                  </tr>
+                                  
+                              </tbody>
+                              
+
+                          </table>
+                      </div>  <!--  pr-table-wrapper  -->
+
+                  </div> <!--  pr_table-style  -->
+
+              </div> <!--  pr-table-main-wrap  -->
+
+          </div> <!--  row  -->
+          
+
+      </div>  <!--   container-fluid -->
+  </div> <!-- page-content-wrapper -->
+
+  <div class="modal fade" id="myModal" role="dialog" *ngIf="AllEmployeePay">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <div class="forms">
+                <form>
+                  <div class="form-group">
+                       <label for="sel1">Select list (select one):</label>
+                        <select class="form-control" id="sel1" name="_userId" [(ngModel)] = "pay._userId" #userId="ngModel">
+                          <option *ngFor="let employee of user.users" value="{{ employee.id }}">{{ employee.name.first }}</option>
+                        </select>
+                    </div>
+                  <div class="form-group">
+                        <label for="Date">Date:</label>
+                        <input type="text" class="form-control" id="Month" name="month" [(ngModel)] = "pay.month" #month="ngModel">
+                  </div> 
+                      <button type="button" class="btn btn-xs btn-success" (click) = "generatepay()">Submit</button>  
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>

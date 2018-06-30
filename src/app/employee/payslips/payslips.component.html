@@ -1,0 +1,92 @@
+<!-- Page Content -->
+<div id="pr-page-content-wrapper">
+  <div class="container-fluid">
+
+      <div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+          <h4>Payslips</h4>
+      </div>
+      <!-- pr-pg-title-wrapper  -->
+
+      <div class="row">
+
+          <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 pr-table-main-wrap">
+
+              <div class="pr_table-style" data-aos="fade-right" data-aos-duration="1500">
+
+                  <form>
+                    <div class="form-group row">
+                        <label for="staticMonth" class="col-sm-6 col-form-label pr_leave_level">Select Month :</label>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+
+                                    <input type='text' class="form-control" id="months" name="months" [(ngModel)] = "dated.months" #months="ngModel"/>
+                            </div>
+                            <div class="form-group">
+
+                                <input type='text' class="form-control" id="months" name="year" [(ngModel)] = "dated.year" #year="ngModel"/>
+                            </div>
+                            <div class ="form-group">
+                                <button class="btn btn-success" (click)="showpayslip();">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+
+                  </form>
+
+                  <div class="pr-table-wrapper" *ngIf="allpayslip">
+                      <table class="table table-hover test-table" *ngIf="allpayslip.payslip">
+                          <tbody>
+                              <tr class="pr-table-row" *ngIf="allpayslip.payslip._userId.baseSalary">
+                                  <th class="text-center" scope="col">Base</th>
+                                  <td class="text-center">{{ allpayslip.payslip._userId.baseSalary }}</td>
+
+                              </tr>
+                              <tr class="pr-table-row" *ngIf="allpayslip.payslip.da">
+
+                                  <th class="text-center" scope="col">DA</th>
+                                  <td class="text-center">{{ allpayslip.payslip.da }}</td>
+
+                              </tr>
+                              <tr class="pr-table-row" *ngIf="allpayslip.payslip.hra">
+
+                                  <th class="text-center" scope="col">HRA</th>
+                                  <td class="text-center">{{ allpayslip.payslip.hra }}</td>
+
+                              </tr>
+                              <tr class="pr-table-row-total" *ngIf="allpayslip.payslip.totalAmount">
+
+                                <th class="text-center" scope="col">Total</th>
+                                <td class="text-center">{{ allpayslip.payslip.totalAmount }}</td>
+
+                            </tr>
+                              <tr class="pr-table-row" *ngIf="allpayslip.payslip.medical">
+
+                                  <th class="text-center" scope="col">Medical</th>
+                                  <td class="text-center">{{ allpayslip.payslip.medical }}</td>
+
+                              </tr>
+                              <tr class="pr-table-row" *ngIf="allpayslip.payslip.pf">
+
+                                  <th class="text-center" scope="col">Pf</th>
+                                  <td class="text-center">{{ allpayslip.payslip.pf }}</td>
+                              </tr>
+                          </tbody>
+
+                      </table>
+                  </div>
+                  <!--  pr-table-wrapper  -->
+
+              </div>
+              <!--  pr_table-style  -->
+
+          </div>
+          <!--  pr-table-main-wrap  -->
+
+      </div>
+      <!--  row  -->
+
+  </div>
+  <!--   container-fluid -->
+
+</div>
+<!-- page-content-wrapper -->

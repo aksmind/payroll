@@ -1,0 +1,57 @@
+<!-- Page Content -->
+<div id="pr-page-content-wrapper">
+  <div class="container-fluid">
+      <div class="pr-pg-title-wrapper text-center" data-aos="fade-down" data-aos-duration="1200">
+          <h4>Leaves Status</h4>
+          <span> CL Balance: 20 </span>
+          <span> PL Balance: 20 </span>
+      </div>
+      <!-- pr-pg-title-wrapper  -->
+
+      <div class="row">
+
+          <div class="col-12 pr-table-main-wrap">
+
+              <div class="pr_table-style" data-aos="fade-right" data-aos-duration="1500" *ngIf ="allLeave">
+
+                  <div class="pr-table-wrapper">
+                      <table class="table table-bordered table-striped table-hover test-table" id="user-table1">
+                          <thead class="thead-dark">
+                              <tr>
+                                  <th class="text-center" scope="col">Applied</th>
+                                  <th class="text-center" scope="col">From</th>
+                                  <th class="text-center" scope="col">To</th>
+                                  <th class="text-center" scope="col">Approved</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr *ngFor ="let leave of allLeave.leaves">
+                                  <td class="text-center">{{ leave.requestDate|date:"dd-MM-yyyy" }}</td>
+                                  <td class="text-center">{{ leave.startDate|date:"dd-MM-yyyy" }}</td>
+                                  <td class="text-center">{{ leave.endDate|date:"dd-MM-yyyy" }}</td>
+                                  <td class="text-center">
+                                    <i class="fa fa-check pr-tick" *ngIf="leave.isApproved"></i>
+                                    <i class="fa fa-close pr-tick" *ngIf="leave.isRejected"></i>
+                                    <span *ngIf="!leave.isApproved && !leave.isRejected">Pending</span>
+                                </td>
+                              </tr>
+
+                          </tbody>
+                      </table>
+                  </div>
+                  <!--  pr-table-wrapper  -->
+
+              </div>
+              <!--  pr_table-style  -->
+
+          </div>
+          <!--  pr-table-main-wrap  -->
+
+      </div>
+      <!--  row  -->
+
+  </div>
+  <!--   container-fluid -->
+
+</div>
+<!-- page-content-wrapper -->
